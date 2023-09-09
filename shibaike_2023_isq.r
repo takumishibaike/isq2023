@@ -65,8 +65,8 @@ pangolin <- read.csv("pangolin.csv")
 ggplot(pangolin, aes(x=year,y=pangolin, colour="black")) + geom_point(color="black") + geom_line(color="black") + theme_bw() + labs(x="Year", y="Number of articles") + theme(text = element_text(size = 16)) 
 
 ### Results for Table 2.
-d$log_salience = log(d$salience+1) # log transformation.
-d$count_salience = round(d$salience*100) # round it for NB.
+d$log_salience <- log(d$salience+1) # log transformation.
+d$count_salience <- round(d$salience*100) # round it for NB.
 
 m1 <- glmmTMB(count_salience ~ wwf + g_north + category + cute, data=d, family = nbinom2)
 m2 <- glmmTMB(count_salience ~ wwf + ngos + g_north + category + cute, family = nbinom2, data=d)
@@ -81,9 +81,9 @@ summary(m4)
 ###### Appendix #####
 
 ### Appendix C
-wildlife = read.csv("wildlife.csv", header = T) # articles examined in the paper.
-pet_abuse = read.csv("pet_abuse.csv", header = T) # articles with "pet abuse".
-death_penalty = read.csv("death_penalty.csv", header = T) # articles with "death penalty".
+wildlife <- read.csv("wildlife.csv", header = T) # articles examined in the paper.
+pet_abuse <- read.csv("pet_abuse.csv", header = T) # articles with "pet abuse".
+death_penalty <- read.csv("death_penalty.csv", header = T) # articles with "death penalty".
 
 t.test(pet_abuse$pet_abuse, wildlife$wildlife)
 t.test(death_penalty$death_penalty, wildlife$wildlife)
@@ -93,7 +93,7 @@ t.test(death_penalty$death_penalty, pet_abuse$pet_abuse)
 stargazer(d[,c("salience","wwf","ngos","g_north","us","uk","jpn","aus","category","cute")])
 
 ### Appendix E
-cordata = d[,c("category","wwf","ngos","salience")]
+cordata <- d[,c("category","wwf","ngos","salience")]
 stargazer(cor(cordata)) 
 
 ### Appendix F
@@ -150,8 +150,8 @@ summary(m12)
 summary(m13)
 
 ### Marginal effects for Appendix K.
-mod = m2
-wwfdata = data.frame(wwf = seq(0,262,length.out=203),
+mod <- m2
+wwfdata <- data.frame(wwf = seq(0,262,length.out=203),
                      ngos = mean(d$ngos),
                      g_north = mean(d$g_north),
                      category = mean(d$category),
@@ -162,17 +162,17 @@ ngodata <- data.frame(wwf = mean(d$wwf),
                       category = mean(d$category),
                       cute = mean(d$cute))
 
-newdata = ngodata
-pred = data.frame(predict(mod, newdata=newdata, se.fit = T))
+newdata <- ngodata
+pred <- data.frame(predict(mod, newdata=newdata, se.fit = T))
 names(pred)[1:2] = c("xb","se")
-pred$lambda = exp(pred$xb) 
-pred$lowerb = exp(pred$xb - 1.96*pred$se) # 95% confidence interval.
-pred$upperb = exp(pred$xb + 1.96*pred$se) # 95% confidence interval.
-pred$wwf = wwfdata$wwf
-pred$ngos = ngodata$ngos
+pred$lambda <- exp(pred$xb) 
+pred$lowerb <- exp(pred$xb - 1.96*pred$se) # 95% confidence interval.
+pred$upperb <- exp(pred$xb + 1.96*pred$se) # 95% confidence interval.
+pred$wwf <- wwfdata$wwf
+pred$ngos <- ngodata$ngos
 fixef(mod)
-pred$mfx_ngos = pred$lambda*0.12993
-pred$mfx_wwf = pred$lambda*0.01314
+pred$mfx_ngos <- pred$lambda*0.12993
+pred$mfx_wwf <- pred$lambda*0.01314
 mean(pred$mfx_ngos)
 mean(pred$mfx_wwf)
 dev.off()
