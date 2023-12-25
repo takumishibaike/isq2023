@@ -14,7 +14,7 @@ jpn_news - salience score based on Japanese newspapers.\
 us_cute - number of appearances on the cover pages of Amazon's top 100 children's books in USA.\
 uk_cute - number of appearances on the cover pages of Amazon's top 100 children's books in UK.\
 jpn_cute - number of appearances on the cover pages of Amazon's top 100 children's books in Japan.\
-aus_cute - number of appearances on the cover pages of Amazon's top 100 children's books in Australia.\
+aus_cute - number of appearances on the cover pages of Amazon's top 100 children's books in Australia.
 
 Variables in "pangoin.csv"\
 year - year of the articles collected.\
