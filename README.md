@@ -1,4 +1,4 @@
-These are replication files (figures and statistical analyses) for: Takumi Shibaike, The Power of Specialization: NGO Advocacy in Global Conservation Governance, _International Studies Quarterly_, Volume 67, Issue 2, 2023.\
+These are replication files (figures and statistical analyses) for: Shibaike, Takumi. (2023). "The Power of Specialization: NGO Advocacy in Global Conservation Governance." _International Studies Quarterly, 67_(2).\
 Please let me know if you have any questions at tshibak@syr.edu.
 
 Variables in "mammal.csv"\
@@ -23,4 +23,4 @@ pangolin - the number of articles published on pangolin.
 Variable in "wildlife.csv" "pet_abuse.csv" "death_penalty.csv"\
 each row is a score of the newspaper.
 
-"shibaike_2022_isq.r" was executed on Microsoft R Open 3.5.3.
+"shibaike_2022_isq.r" was executed on R 3.5.3 (March, 2019) (Microsoft R Open 3.5.3).
