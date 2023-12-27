@@ -1,5 +1,4 @@
-These are replication files (figures and statistical analyses) for: Shibaike, Takumi. (2023). "The Power of Specialization: NGO Advocacy in Global Conservation Governance." _International Studies Quarterly, 67_(2).\
-Please let me know if you have any questions at tshibak@syr.edu.
+These are replication files (figures and statistical analyses) for: Shibaike, Takumi. (2023). "The Power of Specialization: NGO Advocacy in Global Conservation Governance." _International Studies Quarterly, 67_(2). Please let me know if you have any questions at tshibak@syr.edu.
 
 Variables in "mammal.csv"\
 name - name of the species.\
